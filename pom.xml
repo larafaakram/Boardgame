@@ -98,6 +98,24 @@
 
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.9.9</version>
+                <configuration>
+                    <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                    <filesets>
+                        <!-- delete directories that will be generated when you 
+                            start the develpment server/client in eclipse  
+                        -->
+                        <fileset>
+                            <directory>target/classes</directory>
+                            <excludes>
+                                <exclude>**/*</exclude>
+                            </excludes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
             <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
